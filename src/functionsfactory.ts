@@ -311,3 +311,24 @@ function diffDays(params: any[]) {
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 FunctionFactory.Instance.register("diffDays", diffDays);
+
+// Get current month name
+function currentMonthName(params: any[]) {
+  const date: any = new Date();
+  return date.toLocaleString(settings.defaultLocaleName, { month: "long" });
+}
+FunctionFactory.Instance.register("currentMonthName", currentMonthName);
+
+// Get current day of the week name
+function currentDayName(params: any[]) {
+  const date: any = new Date();
+  return date.toLocaleString(settings.defaultLocaleName, { weekday: "long" });
+}
+FunctionFactory.Instance.register("currentDayName", currentDayName);
+
+// Get current day of the month number
+function currentDay(params: any[]) {
+  const date: any = new Date();
+  return date.getDate();
+}
+FunctionFactory.Instance.register("currentDay", currentDay);
